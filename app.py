@@ -3,7 +3,7 @@ from uszipcode import SearchEngine
 
 app = Flask(__name__)
 
-@app.route("/", methods=['GET'])
+@app.route("/<zip>", methods=['GET'])
 def get_zip(zip):
     engine = SearchEngine()
     place = engine.by_zipcode(zip)
